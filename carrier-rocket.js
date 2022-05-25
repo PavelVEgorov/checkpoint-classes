@@ -1,11 +1,12 @@
-const solidPropellantRocketEngine = require('./solid-propellant-rocket-engine');
-
-class carrierRocket extends solidPropellantRocketEngine {
-  constructor(name, pecificImpulse, rocketPropellant, rocket, stages) {
-    super(name, pecificImpulse, rocketPropellant);
-    this.rocket = rocket;
-    this.stages = stages;
+class carrierRocket {
+  constructor(stages) {
+    this.stages = [...stages];
   }
+  detachStage() {
+    this.stages = this.stages.slice(1);
+   };
+
 }
+
 
 module.exports = carrierRocket;
